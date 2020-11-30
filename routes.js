@@ -28,6 +28,10 @@ routes.get('/produtos', (req, res) => {
     res.marko(require('./templates/produtos.marko'))
 })
 
+//Rota para a tela de login
+routes.get('/login', (req, res) =>{
+    res.marko(require('./templates/login.marko'))
+})
 
 //Pegando os dados do Formulario e mandando pro banco de dados
 routes.post('/registro', (req, res) => {

@@ -10,6 +10,7 @@ app.use("/assets", express.static(__dirname + "/assets/"));
 app.use("/img", express.static(__dirname + "/img/"));
 app.use("/scripts", express.static(__dirname + "/scripts/"));
 
+
 //Conectando ao Banco de Dados MongoDB
 mongoose.Promise = global.Promise;
 

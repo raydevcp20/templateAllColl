@@ -106,7 +106,7 @@ CPFid.addEventListener('focusout', function(e) {
         cpf == "88888888888" ||
         cpf == "99999999999" 
     ) {
-        alert("CPF INVALIDO");
+        // alert("CPF INVALIDO");
         CPFid.style.border = "red 3px solid";
     }else{
         CPFid.style.border = "green 3px solid";

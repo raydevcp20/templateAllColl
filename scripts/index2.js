@@ -113,16 +113,4 @@ window.onload = function(){
 
     const btnMais = document.getElementsByClassName('mais');
 
-    for(let i=0; i<btnMais.length; i++){
-        btnMais[i].addEventListener("click",function(e){
-            JSON.parse(localStorage.getItem('items')).map(data=>{
-                // var quant = e.target.getAttribute('value');
-                e.target.setAttribute('value', data.quant+1);
-                
-                
-            });
-            // items.id
-    
-        });
-    }
 }
