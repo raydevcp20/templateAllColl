@@ -20,7 +20,7 @@
 <body id="page-top" >
     
     <nav class="navbar navbar-expand-lg navbar-light  fixed-top" style="background-color: #FDC844;">
-        <a class="navbar-brand" href="/">
+        <a class="navbar-brand" href="/auth/">
             <img id="logo" src="/img/logo.png" alt="logo">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
@@ -30,19 +30,19 @@
         <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link menu-letter" href="/">Catálogo</a>
+              <a class="nav-link menu-letter" href="/auth/">Catálogo</a>
             </li>
             <li class="nav-item menu-letter">
-                <a class="nav-link" href="/produtos">Produtos</a>
+                <a class="nav-link" href="/auth/produtos">Produtos</a>
             </li>
             <li class="nav-item menu-letter active">
-                <a class="nav-link" href="/pagamentos">Carrinho <span class="sr-only">(página atual)</span></a>
+                <a class="nav-link" href="/auth/pagamentos">Carrinho <span class="sr-only">(página atual)</span></a>
             </li>
           </ul>
           <form class="form-inline my-2 my-lg-0">
-            <a class="btn btn-primary" href="/cadastro" role="button" class="btn btn-outline-dark menu-letter" id="hover" style="background-color: #272319; border-radius: 5px; border: none; color: #ffffff; margin-right: 20px;">CADASTRO</a>
+            <a class="btn btn-primary" href="/auth/register" role="button" class="btn btn-outline-dark menu-letter" id="hover" style="background-color: #272319; border-radius: 5px; border: none; color: #ffffff; margin-right: 20px;">CADASTRO</a>
 
-            <a class="btn btn-primary" href="/login" role="button" class="btn btn-outline-dark menu-letter" id="hover2" style="background-color: #ffffff; border-radius: 5px; border: none; color: #161313;">LOGIN</a>
+            <a class="btn btn-primary" href="/auth/authenticate" role="button" class="btn btn-outline-dark menu-letter" id="hover2" style="background-color: #ffffff; border-radius: 5px; border: none; color: #161313;">LOGIN</a>
           </form>
         </div>
     </nav>
@@ -100,7 +100,7 @@
                     </span>
                 </div>
                 <div class="finalizarcompra">
-                    <button href="/" class="cancela">Cancelar</button>
+                    <button href="/" id="cancela" class="cancela">Cancelar</button>
                     <button class="finaliza">Finalizar Compra</button>
                 </div>
             </div>

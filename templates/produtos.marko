@@ -20,7 +20,7 @@
 <body id="page-top" style="height: 645px;">
     
     <nav class="navbar navbar-expand-lg navbar-light  fixed-top" style="background-color: #FDC844;">
-        <a class="navbar-brand" href="/">
+        <a class="navbar-brand" href="/auth/">
             <img id="logo" src="/assets/img/logo.png" alt="logo">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
@@ -30,24 +30,76 @@
         <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link menu-letter" href="/">Catálogo</a>
+              <a class="nav-link menu-letter" href="/auth/">Catálogo</a>
             </li>
             <li class="nav-item menu-letter active">
-                <a class="nav-link" href="/produtos">Produtos <span class="sr-only">(página atual)</span></a>
+                <a class="nav-link" href="/auth/produtos">Produtos <span class="sr-only">(página atual)</span></a>
             </li>
             <li class="nav-item menu-letter">
-                <a class="nav-link" href="/pagamentos">Carrinho</a>
+                <a class="nav-link" href="/auth/pagamentos">Carrinho</a>
             </li>
           </ul>
           <form class="form-inline my-2 my-lg-0">
-            <a class="btn btn-primary" href="/cadastro" role="button" class="btn btn-outline-dark menu-letter" id="hover" style="background-color: #272319; border-radius: 5px; border: none; color: #ffffff; margin-right: 20px;">CADASTRO</a>
+            <a class="btn btn-primary" href="/auth/register" role="button" class="btn btn-outline-dark menu-letter" id="hover" style="background-color: #272319; border-radius: 5px; border: none; color: #ffffff; margin-right: 20px;">CADASTRO</a>
 
-            <a class="btn btn-primary" href="/login" role="button" class="btn btn-outline-dark menu-letter" id="hover2" style="background-color: #ffffff; border-radius: 5px; border: none; color: #161313;">LOGIN</a>
+            <a class="btn btn-primary" href="/auth/authenticate/" role="button" class="btn btn-outline-dark menu-letter" id="hover2" style="background-color: #ffffff; border-radius: 5px; border: none; color: #161313;">LOGIN</a>
           </form>
         </div>
     </nav>
 
+               <!-- Page Content -->
+        <div class="container slide">
 
+            <div class="row">   
+
+                <div class="col-lg-12">
+
+
+                    <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                    </ol>
+                    <div class="carousel-inner" role="listbox">
+                        <div class="carousel-item active">
+                        <a href="#promoções"><img class="d-block img-fluid" src="/img/capa1.png" alt="conheça nossas promoções"></a>
+                        </div>
+                        <div class="carousel-item">
+                        <a href="#promo_nossa"><img class="d-block img-fluid" src="/img/capa2.png" alt="promoção cerveja nossa"></a>
+                        </div>
+                        <div class="carousel-item">
+                        <a href="#promo_refrigerantesaogeraldo"><img class="d-block img-fluid" src="/img/capa3.png" alt="promoção refrigerante são geraldo"></a>
+                        </div>
+                        <div class="carousel-item">
+                        <a href="#promo_triunfo"><img class="d-block img-fluid" src="/img/capa4.png" alt="promoção cachaça triunfo"></a>
+                        </div>
+                    </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Anterior</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Próximo</span>
+                    </a>
+                    </div>
+
+                    <!-- /.row -->
+            </div>
+                <!-- /.col-lg-9 -->
+
+        </div>
+    
+    
+    
+    
+    
+    
+    
+    
     <section class="bg-primary">
         <div class="container">
             
@@ -57,7 +109,7 @@
                         <div class="col-md-3" style="max-width: 75%;min-width: 25%;">
                             <div class="card border rounded shadow">
                                 <div class="border rounded shadow" style="background-color: #f97242;">
-                                    <img class="img-fluid" src="./assets/img/coca.jpeg?h=46c3cecf1e96b109ed11888937a27e0d">
+                                    <img class="img-fluid" src="/assets/img/coca.jpeg?h=46c3cecf1e96b109ed11888937a27e0d">
                                 </div>
                                 <div class="card-body text-center">
                                     <h4 class="card-title" style="font-weight: bold;">Coca-cola lata</h4>
@@ -73,7 +125,7 @@
                         <div class="col-md-3" style="max-width: 75%;min-width: 25%;">
                             <div class="card border rounded shadow">
                                 <div class="border rounded shadow" style="background-color: #f97242;">
-                                    <img class="img-fluid" src="./assets/img/9319610744862.jpg?h=47e9bf8416e0072c2d403ea63fc80413">
+                                    <img class="img-fluid" src="/assets/img/9319610744862.jpg?h=47e9bf8416e0072c2d403ea63fc80413">
                                 </div>
                                 <div class="card-body text-center">
                                     <h4 class="card-title" style="font-weight: bold;">Skol Beats -azul</h4>
@@ -88,7 +140,7 @@
 
                         <div class="col-md-3" style="max-width: 75%;min-width: 25%;">
                             <div class="card border rounded shadow">
-                                <div class="border rounded shadow" style="background-color: #f97242;"><img class="img-fluid" src="./assets/img/skol.jpg?h=c009ad8ee883ec1491bacfc5f21c37b4"></div>
+                                <div class="border rounded shadow" style="background-color: #f97242;"><img class="img-fluid" src="/assets/img/skol.jpg?h=c009ad8ee883ec1491bacfc5f21c37b4"></div>
                                 <div class="card-body text-center">
                                     <h4 class="card-title" style="font-weight: bold;">Skol lata</h4>
                                     <h6 class="text-muted card-subtitle mb-2" style="color: rgb(6,6,6);">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</h6>
@@ -102,7 +154,7 @@
 
                         <div class="col-md-3" style="max-width: 75%;min-width: 25%;">
                             <div class="card border rounded shadow">
-                                <div class="border rounded shadow" style="background-color: #f97242;"><img class="img-fluid" src="./assets/img/suco.jpg?h=8252cfa66bc783e911680b8176807403"></div>
+                                <div class="border rounded shadow" style="background-color: #f97242;"><img class="img-fluid" src="/assets/img/suco.jpg?h=8252cfa66bc783e911680b8176807403"></div>
                                 <div class="card-body text-center">
                                     <h4 class="card-title" style="font-weight: bold;">Suco garrafa do bem</h4>
                                     <h6 class="text-muted card-subtitle mb-2" style="color: rgb(6,6,6);">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</h6>

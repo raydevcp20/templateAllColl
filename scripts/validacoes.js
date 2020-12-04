@@ -1,93 +1,99 @@
-
-function validasenha(){
-    var senha1 = document.getElementById("senha").value;
-    var senha2 = document.getElementById("senha2").value;
-
-    if(senha1 != senha2){
-        document.getElementById("senha2").style.border = "red 3px solid";
-    }else {
-        document.getElementById("senha2").style.border = "green 3px solid";
-    }
-}
-
 var form = document.getElementById('form');
 
-form.addEventListener('submit', function(e) {
-
-   //validações dos seguintes campos
-   var nome = document.getElementById("nome_completo");
-   var email = document.getElementById("inputEmail4");
-   var data = document.getElementById("data_nascimento").value;
-   var campoData = document.getElementById("data_nascimento");
-   var cvv = document.getElementById("cvv");
-
-   //Verifica se o campo nome foi preenchido e se
-   //contém no mínimo três caracteres.
-   if(nome.value == "" || nome.value.lenght < 3) {
+form.addEventListener('submit', function (e) {
+    
+    var senha1 = document.getElementById("senha").value;
+    var senha2 = document.getElementById("senha2").value;
+    
+    if (senha1 != senha2) {
+        document.getElementById("senha2").style.border = "red 3px solid";
+        e.preventDefault();
+    } else {
+        document.getElementById("senha2").style.border = "green 3px solid";
+        
+    }
+    //validações dos seguintes campos
+    var nome = document.getElementById("nome_completo");
+    var email = document.getElementById("inputEmail4");
+    var data = document.getElementById("data_nascimento").value;
+    var campoData = document.getElementById("data_nascimento");
+    var numCartao = document.getElementById("numCartao");
+    var cvv = document.getElementById("cvv");
+    
+    //Verifica se o campo nome foi preenchido e se
+    //contém no mínimo três caracteres.
+    if (nome.value == "" || nome.value.lenght < 3) {
         //É mostrado um alerta, caso o campo esteja vazio.
         alert("Por favor, indique um nome válido.");
         //Foi definido um focus no campo.
         nome.focus();
         //o form não é enviado.
-        e.preventDefault;
+        e.preventDefault();
     }
-
+    
     //validação email
-
+    
     // o campo e-mail precisa de conter: "@", "." e não pode estar vazio
-    if( email.value == "" 
-        || email.value.indexOf('@') == -1 
-        || email.value.indexOf('.') == -1 ){
-        alert( "Por favor, informe um E-MAIL válido!" );
+    if (email.value == ""
+    || email.value.indexOf('@') == -1
+    || email.value.indexOf('.') == -1) {
+        alert("Por favor, informe um E-MAIL válido!");
         email.style.border = "red 3px solid";
-        e.preventDefault;
-    }else{
+        e.preventDefault();
+    } else {
         email.style.border = "green 3px solid";
     }
 
     //validação data de nascimento
-    
+
     data = data.replace("/", "-"); // substitui as barras "/" por hífen "-"
 
     var data_array = data.split("-"); // quebra a data em array
-   
+
     // para o IE onde será inserido no formato dd/MM/yyyy
-    if(data_array[0].length != 4){
-        data = data_array[2]+"-"+data_array[1]+"-"+data_array[0]; // remonto a data no formato yyyy/MM/dd
+    if (data_array[0].length != 4) {
+        data = data_array[2] + "-" + data_array[1] + "-" + data_array[0]; // remonto a data no formato yyyy/MM/dd
     }
-    
+
     // compara as datas e calculo a idade
     var hoje = new Date();
-    var nasc  = new Date(data);
+    var nasc = new Date(data);
     var idade = 0;
     idade = hoje.getFullYear() - nasc.getFullYear();
     var mes = hoje.getMonth() - nasc.getMonth();
 
     // calcula a idade 
-    if (mes < 0 || (mes === 0 && hoje.getDate() < nasc.getDate())){
+    if (mes < 0 || (mes === 0 && hoje.getDate() < nasc.getDate())) {
         idade--;
     }
     console.log(idade);
-    if(idade > 18 ){
+    if (idade > 18) {
         campoData.style.border = "green 3px solid";
-    }else{
+    } else {
         alert("Pessoas menores de 18 não podem se cadastrar.");
         campoData.style.border = "red 3px solid";
-        e.preventDefault;
+        e.preventDefault();
     }
 
     //validação do cvv
-    if (cvv.value.length != 3){
+    if (cvv.value.length != 3) {
         alert("Só é permitido 3 digitos no CVV");
         cvv.style.border = "red 3px solid";
-    }else cvv.style.border = "green 3px solid";
+        e.preventDefault();
+    } else cvv.style.border = "green 3px solid";
+
+    if (numCartao.value.length != 16) {
+        alert("O número do cartão deve ter apenas 16 números");
+        cvv.style.border = "red 3px solid";
+        e.preventDefault();
+    } else cvv.style.border = "green 3px solid";
 
 });
 
 //validação do cpf
 var CPFid = document.getElementById('cpf');
- 
-CPFid.addEventListener('focusout', function(e) {
+
+CPFid.addEventListener('focusout', function (e) {
 
     var cpf = CPFid.value; // captura o valor que usario digitou
 
@@ -104,51 +110,55 @@ CPFid.addEventListener('focusout', function(e) {
         cpf == "66666666666" ||
         cpf == "77777777777" ||
         cpf == "88888888888" ||
-        cpf == "99999999999" 
+        cpf == "99999999999"
     ) {
         // alert("CPF INVALIDO");
         CPFid.style.border = "red 3px solid";
-    }else{
+        e.preventDefault();
+    } else {
         CPFid.style.border = "green 3px solid";
     }
     var soma = 0
     var resto
 
-    for (var i = 1; i <= 9; i++) 
-        soma = soma + parseInt(cpf.substring(i-1, i)) * (11 - i)
+    for (var i = 1; i <= 9; i++)
+        soma = soma + parseInt(cpf.substring(i - 1, i)) * (11 - i)
     resto = (soma * 10) % 11
 
-    if ((resto == 10) || (resto == 11))  resto = 0
+    if ((resto == 10) || (resto == 11)) resto = 0
 
-    if (resto != parseInt(cpf.substring(9, 10)) ) {
+    if (resto != parseInt(cpf.substring(9, 10))) {
         CPFid.style.border = "red 3px solid";
+        e.preventDefault();
     }
 
 
     soma = 0
     for (var i = 1; i <= 10; i++) {
-        soma = soma + parseInt(cpf.substring(i-1, i)) * (12 - i)
+        soma = soma + parseInt(cpf.substring(i - 1, i)) * (12 - i)
     }
     resto = (soma * 10) % 11
 
-    if ((resto == 10) || (resto == 11))  resto = 0
+    if ((resto == 10) || (resto == 11)) resto = 0
 
-    if (resto != parseInt(cpf.substring(10, 11) ) ){
+    if (resto != parseInt(cpf.substring(10, 11))) {
         alert("Ops, seu cpf é invalido");
         CPFid.style.border = "red 3px solid";
+        e.preventDefault();
     }
 
 
-    
+
 });
 
 var dataVenc = document.getElementById('dataVencimentoCartao');
- 
-dataVenc.addEventListener('focusout', function(e) {
-    if(dataVenc.value.indexOf('/') == -1){
+
+dataVenc.addEventListener('focusout', function (e) {
+    if (dataVenc.value.indexOf('/') == -1) {
         alert("Falta o / no campo Data de vencimento");
         dataVenc.style.border = "red 3px solid";
-    }else{
+        e.preventDefault();
+    } else {
         dataVenc.style.border = "green 3px solid";
     }
 });

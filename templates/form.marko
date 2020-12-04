@@ -20,8 +20,8 @@
 <body id="page-top" style="height: 645px;">
     
     <nav class="navbar navbar-expand-lg navbar-light  fixed-top" style="background-color: #FDC844;">
-        <a class="navbar-brand" href="/">
-            <img id="logo" src="../assets/img/logo.png" alt="logo">
+        <a class="navbar-brand" href="/auth/">
+            <img id="logo" src="/assets/img/logo.png" alt="logo">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
           <span class="navbar-toggler-icon"></span>
@@ -30,19 +30,19 @@
         <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link menu-letter" href="/">Catálogo <span class="sr-only">(página atual)</span></a>
+              <a class="nav-link menu-letter" href="/auth/">Catálogo <span class="sr-only">(página atual)</span></a>
             </li>
             <li class="nav-item menu-letter">
-                <a class="nav-link" href="/produtos">Produtos</a>
+                <a class="nav-link" href="/auth/produtos">Produtos</a>
             </li>
             <li class="nav-item menu-letter">
-                <a class="nav-link" href="/pagamentos">Carrinho</a>
+                <a class="nav-link" href="/auth/pagamentos">Carrinho</a>
             </li>
           </ul>
           <form class="form-inline my-2 my-lg-0">
-            <a class="btn btn-primary" href="/cadastro" role="button" class="btn btn-outline-dark menu-letter" id="hover" style="background-color: #272319; border-radius: 5px; border: none; color: #ffffff; margin-right: 20px;">CADASTRO</a>
+            <a class="btn btn-primary" href="/auth/register" role="button" class="btn btn-outline-dark menu-letter" id="hover" style="background-color: #272319; border-radius: 5px; border: none; color: #ffffff; margin-right: 20px;">CADASTRO</a>
 
-            <a class="btn btn-primary" href="/login" role="button" class="btn btn-outline-dark menu-letter" id="hover2" style="background-color: #ffffff; border-radius: 5px; border: none; color: #161313;">LOGIN</a>
+            <a class="btn btn-primary" href="/auth/authenticate" role="button" class="btn btn-outline-dark menu-letter" id="hover2" style="background-color: #ffffff; border-radius: 5px; border: none; color: #161313;">LOGIN</a>
           </form>
         </div>
       </nav>
@@ -53,57 +53,57 @@
         <div class="container">
           <h2>Dados pessoais</h2>
 
-          <form action="/registro" id="form" method="POST">
+          <form action="/auth/register" id="form" method="POST">
               <div class="form-group">
                   <br>
                   <label for="nome_completo">Nome Completo</label>
-                  <input name="nome" type="text" class="form-control" id="nome_completo" placeholder="Nome Completo" required>
+                  <input name="nome" type="text" class="form-control" name="nome" id="nome_completo" placeholder="Nome Completo" required>
               </div>
 
               <div class="form-group row">
                   <div class="form-group col-md-6">
                   <label for="date_nascimento">Data de Nascimento</label>
-                    <input class="form-control" type="date" value="DD-MM-AAAA" id="data_nascimento" required>
+                    <input class="form-control" type="date" name="date" value="DD-MM-AAAA" id="data_nascimento" required>
                   </div>
 
                   <div class="form-group col-md-6">
                       <label for="cpf">CPF</label>
-                      <input type="number" class="form-control" id="cpf" placeholder="XXX.XXX.XXX-XX" required>
+                      <input type="number" class="form-control" name="cpf" id="cpf" placeholder="XXX.XXX.XXX-XX" required>
                   </div>
               </div>
 
               <div class="form-group">
                 <label for="endereco">Endereço</label>
-                <input type="text" class="form-control" id="endereco" placeholder="Av. Barão de Lucena, 1111" required>
+                <input type="text" class="form-control" name="endereco" id="endereco" placeholder="Av. Barão de Lucena, 1111" required>
               </div>
 
               <div class="form-row">
                 <div class="form-group col-md-6">
                   <label for="cidade">Cidade</label>
-                  <input type="text" class="form-control" id="cidade" placeholder="Jaboatão dos Guararapes" required>
+                  <input type="text" class="form-control" name="cidade" id="cidade" placeholder="Jaboatão dos Guararapes" required>
                 </div>
                 <div class="form-group col-md-4">
                   <label for="estado">Estado</label>
-                  <input type="text" class="form-control" id="estado" placeholder="Pernambuco" required>
+                  <input type="text" class="form-control" name="estado" id="estado" placeholder="Pernambuco" required>
                 </div>
                 <div class="form-group col-md-2">
                   <label for="cep">CEP</label>
-                  <input type="number" class="form-control" id="cep" placeholder="XXXXXX-XX" required>
+                  <input type="number" class="form-control" name="cep" id="cep" placeholder="XXXXXX-XX" required>
                 </div>
               </div>
               
               <div class="form-row">
                   <div class="form-group col-md-4">
                     <label for="inputEmail4">Email</label>
-                    <input type="email" class="form-control" id="inputEmail4" placeholder="fulano@gmail.com" required>
+                    <input type="email" class="form-control" name="email" id="inputEmail4" placeholder="fulano@gmail.com" required>
                   </div>
                   <div class="form-group col-md-4">
                     <label for="inputPassword4">Senha</label>
-                    <input type="password" class="form-control" id="senha" placeholder="Senha" onkeyup="validasenha();" required>
+                    <input type="password" class="form-control" name="senha" id="senha" placeholder="Senha" required>
                   </div>
                   <div class="form-group col-md-4">
                     <label for="inputPassword4">Repita a senha</label>
-                    <input type="password" class="form-control" id="senha2" placeholder="Repita a senha" onkeyup="validasenha();" required>
+                    <input type="password" class="form-control" id="senha2" placeholder="Repita a senha" required>
                   </div>
               </div>
 
@@ -112,22 +112,22 @@
               <div class="form-row">
                 <div class="form-group col-md-6">
                   <label for="numCartao">Número do cartão</label>
-                  <input type="number" class="form-control" id="numCartao" placeholder="XXXX.XXXX.XXXX.XXXX">
+                  <input type="number" class="form-control" name="numcartao" id="numCartao" placeholder="XXXX.XXXX.XXXX.XXXX">
                 </div>
                 <div class="form-group col-md-4">
                   <label for="nomeCartao">Nome no cartão</label>
-                  <input type="text" class="form-control" id="nomeCartao" placeholder="Maria C da Silva">
+                  <input type="text" class="form-control" name="nomecartao" id="nomeCartao" placeholder="Maria C da Silva">
                 </div>
                 <div class="form-group col-md-2">
                   <label for="cvv">CVV</label>
-                  <input type="number" class="form-control" id="cvv"  placeholder="123">
+                  <input type="number" class="form-control" name="cvv" id="cvv"  placeholder="123">
                 </div>
               </div>
               
               <div class="form-row">
                   <div class="form-group col-md-6">
                     <label for="dataVencimentoCartao">Data de vencimento</label>
-                    <input type="text" class="form-control" id="dataVencimentoCartao" placeholder="DD/MM" maxlength=5 required>
+                    <input type="text" class="form-control" name="vencicartao" id="dataVencimentoCartao" placeholder="DD/MM" maxlength=5 required>
                   </div>
               </div>
 
@@ -199,21 +199,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
     <script src="/assets/js/script.min.js?h=7a4e021987da3d38b958d06f38b30142"></script>
-<!-- 
-    <script>
-      function validasenha(){
-        var senha1 = document.getElementById("senha").value;
-        var senha2 = document.getElementById("senha2").value;
-
-        if(senha1 != senha2){
-            console.log("oi");
-            document.getElementById("senha2").style.border = "red 3px solid";
-        }else {
-            console.log("tudo");
-            document.getElementById("senha2").style.border = "green 3px solid";
-        }
-      }
-    </script> -->
 
 </body>
 
